@@ -1,0 +1,180 @@
+*************************** Student/Instructor *************************************
+
+######################## Login Page #############################################
+
+imgCKLogo=login-logo
+txtUserEmail=.//*[contains(@id,'undefined-exampleexamplecom-Email')]
+lblUserEmailError=.//*[@id='login-body']/form/div[1]/div/div[3]
+txtUserPassword=.//*[contains(@id,'undefined--Password')]
+lblUserPassError=.//*[@id='password-container']/div/div[3]
+btnLogin=login-button
+lnkForgotEmail=EMAIL
+lnkForgotPass=PASSWORD
+btnSignUp=signup-button
+lnkTermsServices=Terms and Service
+lnkPrivacyPolicy=Privacy Policy
+
+######################## SignUp Page ############################################
+
+lblRegister=.//*[text()='Register']
+btnChooseStudent=.//*[text()='STUDENT']
+btnChooseInstructor=.//*[text()='INSTRUCTOR']
+
+// Personal Information
+lblAccount=.//*[contains(text(),'Account')]
+txtFirstName=registration-first-name
+lblFirstNameError=html/body/div[6]/div/div/div/div[2]/form/div[3]/div[1]/div/div[3]
+txtLastName=registration-last-name
+lblLastNameError=html/body/div[6]/div/div/div/div[2]/form/div[3]/div[2]/div/div[3]
+txtEmail=registration-email
+lblEmailError=html/body/div[6]/div/div/div/div[2]/form/div[3]/div[3]/div/div[3]
+txtConfirmEmail=registration-confirm-email
+lblConfirmEmailError=//div[6]/div/div/div/div[2]/form/div[3]/div[4]/div/div[3]
+
+// Password Information
+txtPassword=registration-set-password
+lblPasswordError=html/body/div[6]/div/div/div/div[2]/form/div[2]/div[1]/div/div[3]
+txtConfirmPassword=registration-confirm-password
+lblConfirmPassError=html/body/div[6]/div/div/div/div[2]/form/div[2]/div[2]/div/div[3]
+
+// School Information
+txtSchoolName=registration-school-names
+lblSchoolNameError=//div[6]/div/div/div/div[2]/form/div[2]/div[1]/div/div[1]/div[2]
+txtSchoolIssueID=registration-school-id
+lblSchoolIDError=//div[6]/div/div/div/div[2]/form/div[2]/div[2]/div/div[3]
+txtConfirmSchoolIssueID=registration-confirm-school-id
+lblConfirmSchoolIDError=//div[6]/div/div/div/div[2]/form/div[2]/div[3]/div/div[3]
+
+// Recovery Information 
+ddlSecurityQuestion=html/body/div[6]/div/div/div/div[2]/form/div[2]/div[2]/div/div[1]/div[2]
+txtAnswer=registration-answer-err
+lblAnswerError=//div[6]/div/div/div/div[2]/form/div[2]/div[3]/div/div[3]
+chkAgreeTerms=registration-checkbox
+lblAgreeTermsError=//div[6]/div/div/div/div[2]/form/div[2]/div[4]/div[2]/div[2]/span
+lnkTerms=terms of service
+lnkPrivacy=privacy policy.
+btnSubmit=.//*[contains(text(),'SUBMIT')]
+
+// All Steps
+btnCancel=.//*[contains(text(),'CANCEL')]
+btnNext=.//*[contains(text(),'NEXT')]
+btnClose=//div[6]/div/div/div/div[1]/div[2]/button/div
+
+######################## Profile Page ############################################
+lblUserNameIns=//*[contains(@class,'profile-dropdown-name')]
+lblUserNameStd=.profile-dropdown-name.ellipsis>div
+imgProfileAvatar=//*[@id="profile-avatar"]
+btnProfile=//*[contains(text(),'Profile')]
+btnSignOut=//*[contains(text(),'Sign out')]
+btnlogo=//*[@id="nav-bar"]/div[1]/div/div[1]/button
+
+***********************************************************************************
+
+
+****************************** Instructor *****************************************
+####################### Create Course Page ######################################
+btnCreate=//*[@id="page-content"]/div/div[1]/div[1]/div[1]/div[1]/div[1]/div/div/button/div/div
+txtCourseName=//*[@data-test-id="courses-courseModalInfo-courseName-input"]
+txtCourseTitle=//*[@data-test-id="courses-courseModalInfo-courseTitle-input"]
+txtInstructorName=//input[starts-with(@id,'undefined-Albert')]
+txtSchoolNameCreate=registration-school-names
+dtpStartDate=//input[starts-with(@id,'undefined-undefined-SelectStartDate')]
+btnOkSD=//div[12]/div/div[1]/div/div/div/div/div[2]/div[2]/button[2]
+dtpEndDate=//input[starts-with(@id,'undefined-undefined-SelectEndDate')]
+dtpStartTime=//input[starts-with(@id,'undefined-undefined-SelectStartTime')]
+dtpEndTime=//input[starts-with(@id,'undefined-undefined-SelectEndTime')]
+# Add btnCancel as object
+btnFinish=.//*[contains(text(),'FINISH')]
+
+####################### Attendance Page #########################################
+sessionMoreOptions=//*[@id="attendance-list-container"]/div[1]/div[2]/div[2]/div[1]/span/div/div/div[2]/button
+dtpAttendance=//*[@class="css-1xbbou7"]/div[2]
+studentMoreOptions=//*[@class="css-17kh6ri"]/div[2]/div[2]/div[2]/div/button
+btnTakeAttendance=//*[@id="attendance-list-container"]/div[1]/div[1]/div/div[1]/div[1]/div/button
+iptDate=//*[@data-test-id="editTimeSheetModal-checkOutDate-input"]
+iptTime=//*[@data-test-id="editTimeSheetModal-checkOutTime-input"]
+edtStdAttn=//*[@data-test-id="attendanceGradesModal-attendanceListItem-iconMenu"]/div[2]/span/div[1]/div[1]/div
+btnCloseList=//*[@id="attendance-qr-modal-close-button"]
+iptSerch=//*[@id="chip-input-search"]
+dpdSchools=//*[@id="dashboard-attendance-schools-filter"]/div[1]/button
+
+####################### Create Assesment Page ###################################
+btnCreate1=//*[@id="assessment-new-button-header"]/div[1]/div[1]/div[1]/div[1]/button/div/div
+createFolder=//*[@class="assessment-menu-item"]/div[1]/span/div[1]
+txtFolderName=//*[@class="coursekey-input"]/input
+btnAccept=//*[@class="row-in-form row between-xs"]/div[2]/div[1]/button
+fldMoreOptions=//*[@id="folders-container"]/div[2]/div[1]/div/span/div/div/div[1]/button/div
+btnxpdFolder=//*[@id="folders-container"]/div[2]/div/div[1]/button
+subfldMoreOptions=//*[@id="folders-container"]/div[2]/div/div[2]/div/div/span/div/div/div[1]/button
+btnSave=//*[@class="create-question-save"]
+btnDeleteFld=//div[contains(text(),'Delete')]
+slcAll=//*[@id="page-content"]/div/div/div[2]/div[1]/div[1]/div/div/input
+btnSaveAssessment=//*[@class="row-in-form row"]/div[2]/div/button
+slc1Q=//*[@id="page-content"]/div/div/div[2]/div[2]/div[1]/div/div/div[1]/div[2]/div/div
+slc2Q=//*[@id="page-content"]/div/div/div[2]/div[2]/div[2]/div/div/div[1]/div[2]/div/div
+slc4Q=//*[@id="page-content"]/div/div/div[2]/div[2]/div[4]/div/div/div[1]/div[2]/div/div
+slcObs=//*[@id="page-content"]/div/div/section/div[3]/div[1]/input
+btnSaveAs=//*[@class="css-1fl4q45"]/div[1]/button
+btnCancel=//*[@id="page-content"]/div/div/section/div[4]/div[2]/button
+
+
+####################### Send Assesment Page #####################################
+asmMoreOp=//*[@id="sendAssessment-container"]/div[2]/div[2]/div/div[2]/div/span/div/div/div/div[5]/div/div/button
+txtRnmAssessment=//*[@class="coursekey-input"]/input
+btnSelectCurse=//*[@class="col-xs-10"]/div/div/div[1]/button
+btnStart=//*[@id="sendAssessment-container"]/div[2]/div[2]/div/div[1]/div/span/div/div/div/div[4]/div/button
+btnStart2=//*[@id="sendAssessment-container"]/div[2]/div[2]/div/div[2]/div/span/div/div/div/div/div/button
+btnStart3=//*[@id="sendAssessment-container"]/div[2]/div[2]/div/div[3]/div/span/div/div/div/div/div/button
+btnStartObs=//*[@class="css-diquw3"]/div[1]/div[3]/button
+btnMnz=//*[@class="css-7yij6d"]/span[2]/button[1]
+btnBack=//*[@data-test-id="observationalModal-back-button"]
+btnConfSend=//*[@data-test-id="sendAssessmentModal-send-button"]
+btnClose=//*[@class="ck-modal-close"]/button
+ckbOnebyOne=//*[@value="oneByOne"]
+btnNxtItem=//*[@class="next-item-button"]/button
+btnQuestion=//*[@class="row around-xs"]/div/div/button
+btnCreate=//*[@data-test="copy-assessment-btn"]
+btnComplete=//*[text()='Complete']
+
+####################### Grades Page #############################################
+drpAttendanceGrade=//*[@id="page-content"]//div[text()='Attendance Grades']
+optAttendanceGrade=//span[@class='menu-items']//div[text()='Attendance Grades']
+optAssessmentsGrade=//span[@class='menu-items']//div[text()='Assessment Grades']
+btnFirstAssessment=(//span[@class='assessment-cell-span']//span[@class='primary-info-light'])[1]
+ckLogo=//button[@class='css-sn1utb']
+
+######################## Inbox Page #############################################
+fstInbox=//*[@id="page-content"]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/span
+replayArea=//*[@id="conversation-modal-response-textfield"]
+
+######################### Chat Page #############################################
+
+######################## Roster Page ############################################
+
+######################## Support Page ###########################################
+
+######################## Profile Page ###########################################
+
+
+***********************************************************************************
+****************************** Student ********************************************
+
+####################### Attendance Page #########################################
+
+####################### Create Assesment Page ###################################
+
+####################### Send Assesment Page #####################################
+
+####################### Grades Page #############################################
+
+######################## Inbox Page #############################################
+
+######################### Chat Page #############################################
+
+######################## Roster Page ############################################
+
+######################## Support Page ###########################################
+
+######################## Profile Page ###########################################
+
+***********************************************************************************

@@ -1,0 +1,44 @@
+<html>
+	<head>
+		<title>Report generated on <!-- DATETIME  --></title>
+		<style>
+			table {
+				border-collapse: collapse;
+			}
+
+			th, td {
+				padding: 8px;
+				text-align: left;
+			}
+			tr:hover{background-color:#f5f5f5}
+			tr:nth-child(even){background-color: #f2f2f2}
+
+			#testDesc {
+				background-color: rgb(172, 245, 152);
+				color: white;
+			}
+		</style>
+	<head>
+	<body>
+		<h1><center>Test Results</center></h1>
+		<table style="margin-bottom:100px", border=1, align="center">
+			<tr>
+				<th width="150px">Test Case ID</th>
+				<td width="400px"><!-- TESTCASEID --></td>
+			</tr>	
+			<tr>
+				<th width="150px">Description</th>
+				<td width="400px"><!-- TCDESCRIPTION --></td>
+			</tr>
+		</table>
+		<table id = "testDesc", border=1, align="center">
+			<tr>
+				<th width="5%"><font color="black">Step</font></th>
+				<th width="45%"><font color="black">Step Description</font></th>
+				<th width="45%"><font color="black">Remarks</font></th>
+				<th width="45%"><font color="black">Result</font></th>
+			</tr>
+			<!-- INSERT_RESULTS -->
+		</table>
+	</body>
+</html>

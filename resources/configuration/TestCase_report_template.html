@@ -1,0 +1,113 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Report generated on <!-- DATETIME  --></title>
+
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+		<style type="text/css">
+			${demo.css}
+			
+			table {
+				border-collapse: collapse;
+			}
+
+			th, td {
+				padding: 8px;
+				text-align: left;
+			}
+			tr:hover{background-color:#f5f5f5}
+			tr:nth-child(even){background-color: #f2f2f2}
+
+			#testDesc {
+				background-color: rgb(172, 245, 152);
+				color: white;
+			}
+		</style>
+		<script type="text/javascript">
+		var amountPass = <!-- PASSED -->
+		var amountFail = <!-- FAILED -->
+		var amountNR = <!-- NOTRUN -->
+
+$(function () {
+	Highcharts.setOptions({
+		colors: ['#088A08', '#B43104', '#FACC2E']
+	});
+    $('#container').highcharts({
+        chart: {
+            type: 'pie',
+            options3d: {
+                enabled: true,
+                alpha: 45
+            }
+        },
+		credits: {
+			enabled: false
+			
+		},
+		exporting: {
+            enabled: true
+        },
+        title: {
+            text: 'Test Cases Execution'			
+        },
+        subtitle: {
+            text: 'Results:'
+        },
+        plotOptions: {
+            pie: {
+                innerSize: 100,
+                depth: 45
+            }
+        },
+        series: [{
+            data: [
+                ["Test Cases Passed:" + amountPass, amountPass],
+                ["Test Cases Failed:" + amountFail, amountFail],
+				["Test Cases Not Executed:" + amountNR, amountNR],
+                
+            ]
+        }]
+    });
+});
+		</script>
+	</head>
+	<body>
+	
+	<h1><center>Test Cases Results</center></h1>
+		<script src="https://code.highcharts.com/highcharts.js"></script>
+		<script src="https://code.highcharts.com/highcharts-3d.js"></script>
+		<script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+		<div id="container" style="height: 400px"></div>
+		
+				
+		
+		<table id = "Settings", border=1, style="margin-bottom:40px", align="center">
+			<tr>
+				<th width="200px">Start Time</th>
+				<td width="400px"><!-- STARTTIME --></td>
+			</tr>	
+			<tr>
+				<th>Duration</th>
+				<td width="400px"><!-- DURATION --></td>
+			</tr>
+			<tr>
+				<th>Total Test Cases Executed</th>
+				<td width="400px"><!-- TOTAL --></td>
+			</tr>
+		</table>
+		
+		<table id = "testDesc", style="margin-bottom:60px", border=1, align="center">
+			<tr>
+				<th width="300px"><font color="black">Test Case ID</font></th>
+				<th width="600px"><font color="black">Test Case Description</font></th>
+				<th width="100px"><font color="black">Result</font></th>
+			</tr>
+			<!-- INSERT_RESULTS -->
+		</table>
+		
+		
+		
+	</body>
+</html>
