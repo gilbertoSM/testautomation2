@@ -97,6 +97,11 @@ edtStdAttn=//*[@data-test-id="attendanceGradesModal-attendanceListItem-iconMenu"
 btnCloseList=//*[@id="attendance-qr-modal-close-button"]
 iptSerch=//*[@id="chip-input-search"]
 dpdSchools=//*[@id="dashboard-attendance-schools-filter"]/div[1]/button
+btnDeleteSession=//*[text()="Delete this session"]
+btnConfigSession=//*[@id="attendance-list-container"]/div[1]/div[1]/div/div[3]/div[2]/div/button
+iptSessionTime=//*[@id="attendance-list-container"]/div[1]/div[1]/div/div[3]/div/div[1]/div[2]/div[1]/div/div/input
+iptSessionTimeEnd=//*[@id="attendance-list-container"]/div[1]/div[1]/div/div[3]/div/div[1]/div[2]/div[2]/div/div/input
+iptPoints=//*[@id="attendance-list-container"]/div[1]/div[1]/div/div[3]/div/div[1]/div[2]/div[3]/input
 
 ####################### Create Assesment Page ###################################
 btnCreate1=//*[@id="assessment-new-button-header"]/div[1]/div[1]/div[1]/div[1]/button/div/div
@@ -116,6 +121,7 @@ slc4Q=//*[@id="page-content"]/div/div/div[2]/div[2]/div[4]/div/div/div[1]/div[2]
 slcObs=//*[@id="page-content"]/div/div/section/div[3]/div[1]/input
 btnSaveAs=//*[@class="css-1fl4q45"]/div[1]/button
 btnCancel=//*[@id="page-content"]/div/div/section/div[4]/div[2]/button
+btnConfig=//*[@id="attendance-list-container"]/div[1]/div[1]/div/div[3]/div[2]/div/button
 
 
 ####################### Send Assesment Page #####################################
@@ -148,8 +154,13 @@ fstInbox=//*[@id="page-content"]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1
 replayArea=//*[@id="conversation-modal-response-textfield"]
 
 ######################### Chat Page #############################################
+btnConfig=//*[@id="chat-title-container"]/div[3]/div/div/button
+ckbChat=//*[@class="row center-xs"]/div[3]/div[1]/div[1]/div[1]/input
+btnCloseChat=//*[@data-test-id="global-modal-close-button"]
+btnDelete=//*[@id="chat-msg-container"]/div[1]/div[2]/div/button
 
 ######################## Roster Page ############################################
+btnMoreOptions=//*[@id="page-content"]/div/div[3]/div[1]/div/span/div/div/div/div[6]/div/button
 
 ######################## Support Page ###########################################
 
@@ -158,6 +169,21 @@ replayArea=//*[@id="conversation-modal-response-textfield"]
 
 ***********************************************************************************
 ****************************** Student ********************************************
+
+########################### Home Page ###########################################
+ckbSelectCurse=(//*[@role="listitem"]/div[1]/div[3]/div/div/div)[1]
+ckbSelectSchool=//*[@role="presentation"]/div[1]/div[3]
+lstSelectProfessor=//*[@class="auto-complete"]/input
+optGil=(//*[text()="Gilberto Sanchez"])[4]
+btnAdd=//*[text()="ADD"]
+btnClose=//*[@class="modal-header row between-xs"]/div[2]/div/div[2]/button
+iptCurseCode=//*[@class="coursekey-input"]/input
+btnAddCode=(//*[@class="col-xs-12"])[1]
+btnCrsMrOptions=//*[@id="page-content"]/div/div[1]/div/div/div[3]/div[1]/div/span/div/div/div[2]/button/di
+iptSchoolName=//*[@id="registration-school-names"]
+iptSchoolCode=//*[@id="course-id-add-school"]
+editSchoolCode=//*[@id="profile-schools-view"]/div[2]/div/div[1]/span/div/div/div/div[3]/button
+btnOk=//*[@id="profile-schools-view"]/div[2]/div/div[1]/span/div/div/div/div[4]/button
 
 ####################### Attendance Page #########################################
 
@@ -168,7 +194,7 @@ replayArea=//*[@id="conversation-modal-response-textfield"]
 ####################### Grades Page #############################################
 
 ######################## Inbox Page #############################################
-
+qstArea=//*[@id="page-content"]/div/div[3]/div[1]/form/div[2]/div[2]/div/div[2]/textarea[2]
 ######################### Chat Page #############################################
 
 ######################## Roster Page ############################################
