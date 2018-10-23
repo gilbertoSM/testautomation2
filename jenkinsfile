@@ -1,0 +1,19 @@
+node('master') {
+    stage('Checkout') {
+        git credentialsId: 'ea35ce26-502f-45cb-a497-78262d5e5fb0', url: 'https://gsanchez89@bitbucket.org/coursekey/uiautomation.git'
+    }
+
+    stage('Execute Tests') {
+        def os = System.properties['os.name'].toLowerCase()
+         echo "OS: ${os}"
+        if (os.contains("linux")) {
+             sh '''mvn clean
+            mvn validate
+         mvn compile'''
+        } else {
+            bat '''mvn clean
+            mvn validate
+            mvn compile'''
+    }
+    }
+}
