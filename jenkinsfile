@@ -1,19 +1,92 @@
-node('master') {
-    stage('Checkout') {
-        git credentialsId: 'ea35ce26-502f-45cb-a497-78262d5e5fb0', url: 'https://gsanchez89@bitbucket.org/coursekey/uiautomation.git'
-    }
+properties([pipelineTriggers([[$class: 'BitBucketTrigger']])])
+def deployEnvironments = ['Staging', 'Production'].join('\n')
 
-    stage('Execute Tests') {
-        def os = System.properties['os.name'].toLowerCase()
-         echo "OS: ${os}"
-        if (os.contains("linux")) {
-             sh '''mvn clean
-            mvn validate
-         mvn compile'''
-        } else {
-            bat '''mvn clean
-            mvn validate
-            mvn compile'''
+pipeline {
+  agent any
+
+  parameters {
+    choice(
+        name: 'Environment',
+        choices: deployEnvironments,
+        description: 'Which environment to test?',
+    )
+  }
+
+  options {
+    buildDiscarder(
+     logRotator(
+       daysToKeepStr: '7',
+       numToKeepStr: '10'
+     )
+   )
+  }
+
+  stages {
+    stage('Clean') {
+      steps {
+        sh 'mvn clean'
+      }
     }
+    stage('Validate') {
+      steps {
+        sh 'mvn validate'
+      }
     }
+    stage('Tests') {
+      steps {
+        timeout(time: 5, unit: 'MINUTES') {
+            sh 'mvn compile'
+        }
+      }
+    }
+  }
+
+  post {
+    always {
+      publishHtmlReports()
+    }
+    aborted {
+      slackNotify("Aborted")
+    }
+    success {
+      slackNotify("Success")
+    }
+    failure {
+      slackNotify("Failure")
+    }
+  }
+}
+
+def publishHtmlReports() {
+  echo 'Publish test reports'
+  publishHTML target: [
+    allowMissing: false,
+    alwaysLinkToLastBuild: false,
+    keepAll: true,
+    reportDir: 'results',
+    reportFiles: 'TestCaseReport.html',
+    reportName: 'Results report'
+  ]
+}
+
+
+def slackNotify(type, message=null, channels=['backendjenkins']) {
+  color = "#8c8c8c"
+  if (type == "Success") {
+    color = "#36a64f"
+  } else if (type == "Failure") {
+    color = "#d00000"
+  }
+
+  def slackMsg = message;
+  if (message == null) {
+    slackMsg = "Automation Test » ${env.GIT_BRANCH} - #${env.BUILD_NUMBER} ${type} (<${env.BUILD_URL}|Open>)";
+  }
+
+  channels.each {
+    slackSend(
+      color: "${color}", botUser: true, channel: "${it}",
+      message: slackMsg
+    )
+  }
 }
