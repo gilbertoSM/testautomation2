@@ -24,20 +24,13 @@ def deployEnvironments = ['Staging', 'Production'].join('\n')
              sh '''mvn validate'''
              }
          }
-         stage('Compile')
+         stage('Tests')
          {
              steps{
              echo 'Compile'
              sh'''mvn compile'''
              }
          }
-         
-         stage('Test') {
-             steps {
-                 echo 'Testing..'
-                sh'''mvn test'''
-            }
-        }
         
     }
 }
