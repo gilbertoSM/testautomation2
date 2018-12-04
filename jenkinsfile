@@ -10,34 +10,32 @@ def deployEnvironments = ['Staging', 'Production'].join('\n')
     )
   }
      stages {
-        stage('Build') {
-             steps {
-                 echo 'Building..'
-             }
-         }
+        
          stage('Clean'){
              steps {
                  echo 'Clean...'
-                 bat '''mvn clean'''
+                 sh '''mvn clean'''
              }
          }
          stage('Validate')
          {
              steps{
-             bat '''mvn validate'''
+             echo 'Validate'
+             sh '''mvn validate'''
              }
          }
          stage('Compile')
          {
              steps{
-             bat'''mvn compile'''
+             echo 'Compile'
+             sh'''mvn compile'''
              }
          }
          
          stage('Test') {
              steps {
                  echo 'Testing..'
-                bat'''mvn test'''
+                sh'''mvn test'''
             }
         }
         
