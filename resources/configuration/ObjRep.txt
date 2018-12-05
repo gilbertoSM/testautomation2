@@ -6,7 +6,7 @@ imgCKLogo=login-logo
 txtUserEmail=.//*[contains(@id,'undefined-exampleexamplecom-Email')]
 lblUserEmailError=.//*[@id='login-body']/form/div[1]/div/div[3]
 txtUserPassword=.//*[contains(@id,'undefined--Password')]
-lblUserPassError=.//*[@id='password-container']/div/div[3]
+lblUserPassError=//*[@id='password-container']/div/div[3]
 btnLogin=login-button
 lnkForgotEmail=EMAIL
 lnkForgotPass=PASSWORD
@@ -23,42 +23,42 @@ btnChooseInstructor=.//*[text()='INSTRUCTOR']
 // Personal Information
 lblAccount=.//*[contains(text(),'Account')]
 txtFirstName=registration-first-name
-lblFirstNameError=html/body/div[6]/div/div/div/div[2]/form/div[3]/div[1]/div/div[3]
+lblFirstNameError=html/body/div[8]/div/div/div/div[2]/form/div[3]/div[1]/div/div[3]
 txtLastName=registration-last-name
-lblLastNameError=html/body/div[6]/div/div/div/div[2]/form/div[3]/div[2]/div/div[3]
+lblLastNameError=html/body/div[8]/div/div/div/div[2]/form/div[3]/div[2]/div/div[3]
 txtEmail=registration-email
-lblEmailError=html/body/div[6]/div/div/div/div[2]/form/div[3]/div[3]/div/div[3]
+lblEmailError=html/body/div[8]/div/div/div/div[2]/form/div[3]/div[3]/div/div[3]
 txtConfirmEmail=registration-confirm-email
-lblConfirmEmailError=//div[6]/div/div/div/div[2]/form/div[3]/div[4]/div/div[3]
+lblConfirmEmailError=html/body/div[8]/div/div/div/div[2]/form/div[3]/div[4]/div/div[3]
 
 // Password Information
 txtPassword=registration-set-password
-lblPasswordError=html/body/div[6]/div/div/div/div[2]/form/div[2]/div[1]/div/div[3]
+lblPasswordError=html/body/div[8]/div/div/div/div[2]/form/div[2]/div[1]/div/div[3]
 txtConfirmPassword=registration-confirm-password
-lblConfirmPassError=html/body/div[6]/div/div/div/div[2]/form/div[2]/div[2]/div/div[3]
+lblConfirmPassError=html/body/div[8]/div/div/div/div[2]/form/div[2]/div[2]/div/div[3]
 
 // School Information
 txtSchoolName=registration-school-names
-lblSchoolNameError=//div[6]/div/div/div/div[2]/form/div[2]/div[1]/div/div[1]/div[2]
+lblSchoolNameError=html/body/div[8]/div/div/div/div[2]/form/div[2]/div[1]/div/div[1]/div[2]
 txtSchoolIssueID=registration-school-id
-lblSchoolIDError=//div[6]/div/div/div/div[2]/form/div[2]/div[2]/div/div[3]
+lblSchoolIDError=html/body/div[8]/div/div/div/div[2]/form/div[2]/div[2]/div/div[3]
 txtConfirmSchoolIssueID=registration-confirm-school-id
-lblConfirmSchoolIDError=//div[6]/div/div/div/div[2]/form/div[2]/div[3]/div/div[3]
+lblConfirmSchoolIDError=html/body/div[8]/div/div/div/div[2]/form/div[2]/div[3]/div/div[3]
 
 // Recovery Information 
 ddlSecurityQuestion=html/body/div[6]/div/div/div/div[2]/form/div[2]/div[2]/div/div[1]/div[2]
-txtAnswer=registration-answer-err
-lblAnswerError=//div[6]/div/div/div/div[2]/form/div[2]/div[3]/div/div[3]
+txtAnswer=//*[@id="registration-answer-err"]
+lblAnswerError=html/body/div[8]/div/div/div/div[2]/form/div[2]/div[3]/div/div[3]
 chkAgreeTerms=registration-checkbox
-lblAgreeTermsError=//div[6]/div/div/div/div[2]/form/div[2]/div[4]/div[2]/div[2]/span
+lblAgreeTermsError=html/body/div[8]/div/div/div/div[2]/form/div[2]/div[4]/div[2]/div[2]/span
 lnkTerms=terms of service
 lnkPrivacy=privacy policy.
 btnSubmit=.//*[contains(text(),'SUBMIT')]
 
 // All Steps
-btnCancel=.//*[contains(text(),'CANCEL')]
-btnNext=.//*[contains(text(),'NEXT')]
-btnClose=//div[6]/div/div/div/div[1]/div[2]/button/div
+btnCancel=//*[contains(text(),'CANCEL')]
+btnNext=//*[contains(text(),'NEXT')]
+btnClose=html/body/div[8]/div/div/div/div[1]/div[2]/button
 
 ######################## Profile Page ############################################
 lblUserNameIns=//*[contains(@class,'profile-dropdown-name')]
@@ -73,23 +73,27 @@ btnlogo=//*[@id="nav-bar"]/div[1]/div/div[1]/button
 
 ****************************** Instructor *****************************************
 ####################### Create Course Page ######################################
-btnCreate=//*[@id="page-content"]/div/div[1]/div[1]/div[1]/div[1]/div[1]/div/div/button/div/div
+btnCreate=//*[@data-test-id="courseList-createCourse-button"]
 txtCourseName=//*[@data-test-id="courses-courseModalInfo-courseName-input"]
 txtCourseTitle=//*[@data-test-id="courses-courseModalInfo-courseTitle-input"]
 txtInstructorName=//input[starts-with(@id,'undefined-Albert')]
-txtSchoolNameCreate=registration-school-names
-dtpStartDate=//input[starts-with(@id,'undefined-undefined-SelectStartDate')]
+txtSchoolNameCreate=//*[@id="registration-school-names"]
+dtpStartDate=//*[@data-test-id="courses-courseModalInfo-startDate-input"]
 btnOkSD=//div[12]/div/div[1]/div/div/div/div/div[2]/div[2]/button[2]
-dtpEndDate=//input[starts-with(@id,'undefined-undefined-SelectEndDate')]
-dtpStartTime=//input[starts-with(@id,'undefined-undefined-SelectStartTime')]
-dtpEndTime=//input[starts-with(@id,'undefined-undefined-SelectEndTime')]
+dtpEndDate=//*[@data-test-id="courses-courseModalInfo-endDate-input"]
+dtpStartTime=//*[@data-test-id="courses-courseModalInfo-startTime-input"]
+dtpEndTime=//*[@data-test-id="courses-courseModalInfo-endTime-input"]
+txtSerchCourseName=//*[@id="chip-input-search"]
 # Add btnCancel as object
 btnFinish=.//*[contains(text(),'FINISH')]
 
 ####################### Attendance Page #########################################
 sessionMoreOptions=//*[@id="attendance-list-container"]/div[1]/div[2]/div[2]/div[1]/span/div/div/div[2]/button
 dtpAttendance=//*[@class="css-1xbbou7"]/div[2]
-studentMoreOptions=//*[@class="css-17kh6ri"]/div[2]/div[2]/div[2]/div/button
+dtpOntimeOp=html/body/div[14]/div/div/div/div[1]/span/div/div/div
+dtpAbsentOp=html/body/div[14]/div/div/div/div[2]/span/div/div/div
+studentMoreOptions=html/body/div[13]/div/div/div[3]/div[2]/div/div[2]/div[1]/button/div
+stdMoreOptions=html/body/div[13]/div/div/div[3]/div/div[2]/div[2]/div[2]/div/button/div
 btnTakeAttendance=//*[@id="attendance-list-container"]/div[1]/div[1]/div/div[1]/div[1]/div/button
 iptDate=//*[@data-test-id="editTimeSheetModal-checkOutDate-input"]
 iptTime=//*[@data-test-id="editTimeSheetModal-checkOutTime-input"]
@@ -146,7 +150,7 @@ btnComplete=//*[text()='Complete']
 drpAttendanceGrade=//*[@id="page-content"]//div[text()='Attendance Grades']
 optAttendanceGrade=//span[@class='menu-items']//div[text()='Attendance Grades']
 optAssessmentsGrade=//span[@class='menu-items']//div[text()='Assessment Grades']
-btnFirstAssessment=(//span[@class='assessment-cell-span']//span[@class='primary-info-light'])[1]
+btnFirstAssessment=//*[@id="page-content"]/div/div/div[1]/div[2]/div/div/div[4]/div[1]/div/div/div[1]/div/div[2]/div/div/div/div/div/div/span
 ckLogo=//button[@class='css-sn1utb']
 
 ######################## Inbox Page #############################################
