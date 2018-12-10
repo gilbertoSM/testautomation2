@@ -70,7 +70,7 @@ def publishHtmlReports() {
 }
 
 
-def slackNotify(type, message=null, channels=['backendjenkins']) {
+def slackNotify(type, message=null, channels=['qa']) {
   color = "#8c8c8c"
   if (type == "Success") {
     color = "#36a64f"
