@@ -1,14 +1,17 @@
+properties([pipelineTriggers([[$class: 'BitBucketTrigger']])])
 def deployEnvironments = ['Staging', 'Production'].join('\n')
- pipeline {
-    agent any
-  
-    parameters {
+
+pipeline {
+  agent any
+
+  parameters {
     choice(
         name: 'Environment',
         choices: deployEnvironments,
         description: 'Which environment to test?',
     )
   }
+
   options {
     buildDiscarder(
      logRotator(
@@ -17,32 +20,28 @@ def deployEnvironments = ['Staging', 'Production'].join('\n')
      )
    )
   }
-     stages {
-        
-         stage('Clean'){
-             steps {
-                 echo 'Clean...'
-                 sh '''mvn clean'''
-             }
-         }
-         stage('Validate')
-         {
-             steps{
-             echo 'Validate'
-             sh '''mvn validate'''
-             }
-         }
-         stage('Tests')
-         {
-             steps{
-             timeout(time: 5, unit: 'MINUTES') {
-             echo 'Compile'
-             sh'''mvn compile'''
-             }}
-         }
-        
+
+  stages {
+    stage('Clean') {
+      steps {
+        sh 'mvn clean'
+      }
     }
-     post {
+    stage('Validate') {
+      steps {
+        sh 'mvn validate'
+      }
+    }
+    stage('Tests') {
+      steps {
+        timeout(time: 5, unit: 'MINUTES') {
+            sh 'mvn compile'
+        }
+      }
+    }
+  }
+
+  post {
     always {
       publishHtmlReports()
     }
@@ -56,7 +55,9 @@ def deployEnvironments = ['Staging', 'Production'].join('\n')
       slackNotify("Failure")
     }
   }
-  def publishHtmlReports() {
+}
+
+def publishHtmlReports() {
   echo 'Publish test reports'
   publishHTML target: [
     allowMissing: false,
@@ -88,5 +89,4 @@ def slackNotify(type, message=null, channels=['backendjenkins']) {
       message: slackMsg
     )
   }
-}
 }
