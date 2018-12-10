@@ -1879,7 +1879,7 @@ public class ActionKeywords extends Log {
  *
  ####################################################################################################*/
     public static boolean createUser(Properties p, String object, String data, String Link) {
-        String user = "gilberto.aspros+" + (new Random().nextInt(10000)) + "@gmail.com";
+        String user = "gilberto.sanchez+" + (new Random().nextInt(10000)) + "@digitalonus.com";
         try {
             objProps.setRemark("Creating user " + user);
             info("Creating user " + user);

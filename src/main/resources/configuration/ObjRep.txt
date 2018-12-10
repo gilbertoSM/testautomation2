@@ -23,34 +23,34 @@ btnChooseInstructor=.//*[text()='INSTRUCTOR']
 // Personal Information
 lblAccount=.//*[contains(text(),'Account')]
 txtFirstName=registration-first-name
-lblFirstNameError=html/body/div[8]/div/div/div/div[2]/form/div[3]/div[1]/div/div[3]
+lblFirstNameError=html/body/div[7]/div/div/div/div[2]/form/div[3]/div[1]/div/div[3]
 txtLastName=registration-last-name
-lblLastNameError=html/body/div[8]/div/div/div/div[2]/form/div[3]/div[2]/div/div[3]
+lblLastNameError=html/body/div[7]/div/div/div/div[2]/form/div[3]/div[2]/div/div[3]
 txtEmail=registration-email
-lblEmailError=html/body/div[8]/div/div/div/div[2]/form/div[3]/div[3]/div/div[3]
+lblEmailError=html/body/div[7]/div/div/div/div[2]/form/div[3]/div[3]/div/div[3]
 txtConfirmEmail=registration-confirm-email
 lblConfirmEmailError=html/body/div[8]/div/div/div/div[2]/form/div[3]/div[4]/div/div[3]
 
 // Password Information
 txtPassword=registration-set-password
-lblPasswordError=html/body/div[8]/div/div/div/div[2]/form/div[2]/div[1]/div/div[3]
+lblPasswordError=html/body/div[7]/div/div/div/div[2]/form/div[2]/div[1]/div/div[3]
 txtConfirmPassword=registration-confirm-password
-lblConfirmPassError=html/body/div[8]/div/div/div/div[2]/form/div[2]/div[2]/div/div[3]
+lblConfirmPassError=html/body/div[7]/div/div/div/div[2]/form/div[2]/div[2]/div/div[3]
 
 // School Information
 txtSchoolName=registration-school-names
-lblSchoolNameError=html/body/div[8]/div/div/div/div[2]/form/div[2]/div[1]/div/div[1]/div[2]
+lblSchoolNameError=html/body/div[7]/div/div/div/div[2]/form/div[2]/div[1]/div/div[1]/div[2]
 txtSchoolIssueID=registration-school-id
-lblSchoolIDError=html/body/div[8]/div/div/div/div[2]/form/div[2]/div[2]/div/div[3]
+lblSchoolIDError=html/body/div[7]/div/div/div/div[2]/form/div[2]/div[2]/div/div[3]
 txtConfirmSchoolIssueID=registration-confirm-school-id
-lblConfirmSchoolIDError=html/body/div[8]/div/div/div/div[2]/form/div[2]/div[3]/div/div[3]
+lblConfirmSchoolIDError=html/body/div[7]/div/div/div/div[2]/form/div[2]/div[3]/div/div[3]
 
 // Recovery Information 
 ddlSecurityQuestion=html/body/div[6]/div/div/div/div[2]/form/div[2]/div[2]/div/div[1]/div[2]
 txtAnswer=//*[@id="registration-answer-err"]
-lblAnswerError=html/body/div[8]/div/div/div/div[2]/form/div[2]/div[3]/div/div[3]
+lblAnswerError=html/body/div[7]/div/div/div/div[2]/form/div[2]/div[3]/div/div[3]
 chkAgreeTerms=registration-checkbox
-lblAgreeTermsError=html/body/div[8]/div/div/div/div[2]/form/div[2]/div[4]/div[2]/div[2]/span
+lblAgreeTermsError=html/body/div[7]/div/div/div/div[2]/form/div[2]/div[4]/div[2]/div[2]/span
 lnkTerms=terms of service
 lnkPrivacy=privacy policy.
 btnSubmit=.//*[contains(text(),'SUBMIT')]
