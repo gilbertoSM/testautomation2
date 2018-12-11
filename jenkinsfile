@@ -87,7 +87,7 @@ def slackNotify(type, message=null, channels=['backendjenkins']) {
 
   def slackMsg = message;
   if (message == null) {
-    slackMsg = "Automation Test Â» ${env.GIT_BRANCH} - #${env.BUILD_NUMBER} ${type} (<${env.BUILD_URL}|Open>)";
+    slackMsg = "Automation Test » ${env.GIT_BRANCH} - #${env.BUILD_NUMBER} ${type} (<${env.BUILD_URL}|Open>)";
   }
 
   channels.each {
