@@ -24,7 +24,7 @@ public class ReadObject{
         //Read object repository file
     	InputStream is;
 		try {
-			is = new FileInputStream(Constants.ConfigPath);
+			is = new FileInputStream(Constants.CONFIG_PATH);
 			prop.load(is);
 		} catch (Exception e){
 			if(e instanceof FileNotFoundException || e instanceof IOException){

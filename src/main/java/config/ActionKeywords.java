@@ -739,7 +739,7 @@ public class ActionKeywords extends Log {
     public static boolean snapShot(Properties p, String object, String data, String Link) {
         element = (object.equals("")) ? null : findElement(p, object);
         SSDate = SeleniumUtils.createFolder(new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime()).toString());
-        file = Constants.ScreenShots_Folder + data + "_CustomScreenShot\\" + SSDate.toString() + ".png";
+        file = Constants.SCREENSHOT_DIR + data + "_CustomScreenShot\\" + SSDate.toString() + ".png";
         TakesScreenshot scrShot = null;
         File SrcFile = null;
         try {

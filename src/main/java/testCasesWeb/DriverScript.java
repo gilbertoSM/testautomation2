@@ -70,8 +70,8 @@ public class DriverScript extends ExcelUtils {
         allProperties = object.getObjectProperties();
         allObjects = object.getObjectRepository();
         method = actionKeywords.getClass().getMethods();
-        TCSheetProperty = Constants.Sheet_TestCases;
-        TSSheetProperty = Constants.Sheet_TestSteps;
+        TCSheetProperty = Constants.SHEET_TEST_CASES;
+        TSSheetProperty = Constants.SHEET_TEST_STEPS;
         BrowserProperty = allProperties.getProperty("Browser");
         EmailProperty = allProperties.getProperty("SendEmail");
     }
@@ -84,7 +84,7 @@ public class DriverScript extends ExcelUtils {
     @Test
     public void DriverScript() throws Exception {
         // Modified 27/10/2017,    'DOMConfigurator.configure(u); deleted', Gilberto Sánchez Mares
-        PropertyConfigurator.configure(Constants.LogPropDir);
+        PropertyConfigurator.configure(Constants.LOG_DIR);
         DriverScript startEngine = new DriverScript();
         startEngine.execute_TestCase();
 
@@ -96,7 +96,7 @@ public class DriverScript extends ExcelUtils {
             Desktop.getDesktop().open(new File(Constants.DATA_ENGINE));
         }
         if (allProperties.getProperty("Open_Logs").toLowerCase().equals("true")) {
-            Desktop.getDesktop().open(new File(Constants.Logs_Result + "Logs.log"));
+            Desktop.getDesktop().open(new File(Constants.RESULTS_DIR + "Logs.log"));
         }
     }
 
@@ -116,8 +116,8 @@ public class DriverScript extends ExcelUtils {
         }
 
         for (iTestcase = 1; iTestcase < iTotalTestCases; iTestcase++) {
-            _testCaseReporter.setTestCaseReporter(Constants.TestCase_Template);
-            _testStepReporter.setTestStepReporter(Constants.TestSteps_Template);
+            _testCaseReporter.setTestCaseReporter(Constants.TEST_CASE_TEMPLATE);
+            _testStepReporter.setTestStepReporter(Constants.TEST_STEPS_TEMPLATE);
             setTestCaseValues();
             bResult = true;
 

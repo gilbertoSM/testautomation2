@@ -100,7 +100,7 @@ public class Reporter{
 
             }
 
-            objProp.setTestCaseReporter(Constants.Results_Folder + reportname + ".html");
+            objProp.setTestCaseReporter(Constants.RESULTS_DIR + reportname + ".html");
             Files.write(Paths.get(objProp.getTestCaseReporter()),reportIn.getBytes(),StandardOpenOption.CREATE);
 
         }
@@ -149,7 +149,7 @@ public class Reporter{
                 }
             }
 
-            objProp.setTestStepReporter(Constants.Results_Folder + reportname + ".html");
+            objProp.setTestStepReporter(Constants.RESULTS_DIR + reportname + ".html");
             Files.write(Paths.get(objProp.getTestStepReporter()),reportIn.getBytes(),StandardOpenOption.CREATE);
             detailsSteps.clear();
         }

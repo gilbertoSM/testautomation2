@@ -50,7 +50,7 @@ public class SeleniumUtils {
     public static String takeSnapShot(WebDriver webdriver, WebElement element, String snapshotError) {
         SSDate = new SimpleDateFormat("yyyyMMdd_HH").format(Calendar.getInstance().getTime()).toString();
         SSDateTime = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime()).toString();
-        file = createFolder(Constants.ScreenShots_Folder + SSDate) + "/" + snapshotError + SSDateTime + ".png";
+        file = createFolder(Constants.SCREENSHOT_DIR + SSDate) + "/" + snapshotError + SSDateTime + ".png";
         JavascriptExecutor js = (JavascriptExecutor) webdriver;
         js.executeScript("arguments[0].setAttribute('style','background: yellow')", element);
         //Convert web driver object to TakeScreenshot
@@ -83,7 +83,7 @@ public class SeleniumUtils {
     public static String takeSnapShot(WebDriver webdriver, String snapshotError) {
         SSDate = new SimpleDateFormat("yyyyMMdd_HH").format(Calendar.getInstance().getTime()).toString();
         SSDateTime = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime()).toString();
-        file = createFolder(Constants.ScreenShots_Folder + SSDate)+ "/" + snapshotError + SSDateTime + ".png";
+        file = createFolder(Constants.SCREENSHOT_DIR + SSDate)+ "/" + snapshotError + SSDateTime + ".png";
         //Convert web driver object to TakeScreenshot
         TakesScreenshot scrShot = ((TakesScreenshot) webdriver);
         try { //Call getScreenshotAs method to create image file
