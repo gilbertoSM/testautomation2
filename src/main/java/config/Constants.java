@@ -2,23 +2,23 @@ package config;
 
 public class Constants {
 	// Modified 01/03/2018 'config.properties path variable was created', Gilberto Sánchez Mares
-	public static final String ConfigPath = System.getProperty("user.dir")+ "/src/test/resources/configuration/config.properties";
-	public static final String CHROME_DRIVER = System.getProperty("user.dir") + "/src/test/resources/drivers/chromedriver";
-	public static final String OBJECT_REPOSITORY = System.getProperty("user.dir") + "/src/test/resources/configuration/ObjRep.txt";
-	public static final String CHROME_MOBILE_DRIVER_PATH = System.getProperty("user.dir") + "/src/test/resources/drivers/";
-	public static final String FIREFOX_DRIVER = System.getProperty("user.dir") + "/src/test/resources/drivers/gecko";
-	public static final String IE_DRIVER = System.getProperty("user.dir") + "/src/test/resources/drivers/IEDriverServer";
-	public static final String EDGE_DRIVER = System.getProperty("user.dir") + "/src/test/resources/drivers/MicrosoftWebDriver";
+	public static final String ConfigPath = System.getProperty("user.dir")+ "/src/main/resources/configuration/config.properties";
+	public static final String CHROME_DRIVER = System.getProperty("user.dir") + "/src/main/resources/drivers/chromedriver";
+	public static final String OBJECT_REPOSITORY = System.getProperty("user.dir") + "/src/main/resources/configuration/ObjRep.txt";
+	public static final String CHROME_MOBILE_DRIVER_PATH = System.getProperty("user.dir") + "/src/main/resources/drivers/";
+	public static final String FIREFOX_DRIVER = System.getProperty("user.dir") + "/src/main/resources/drivers/gecko";
+	public static final String IE_DRIVER = System.getProperty("user.dir") + "/src/main/resources/drivers/IEDriverServer";
+	public static final String EDGE_DRIVER = System.getProperty("user.dir") + "/src/main/resources/drivers/MicrosoftWebDriver";
 
 	//DataEngine
-	public static final String DATA_ENGINE = System.getProperty("user.dir")+ "/src/test/resources/configuration/CoursekeyTest.xlsx";
+	public static final String DATA_ENGINE = System.getProperty("user.dir")+ "/src/main/resources/configuration/CoursekeyTest.xlsx";
 	public static final String Sheet_TestSteps = "Test Steps";
 	public static final String Sheet_TestCases = "Test Cases";
 	//Resources directory
 	// Modified 27/10/2017,    'LogXMLDir war replaced by LogPropDir and dir was modified', Gilberto Sánchez Mares
-	public static final String LogPropDir = System.getProperty("user.dir")+ "/src/test/resources/configuration/log4j.properties";
-	public static final String TestCase_Template = System.getProperty("user.dir")+ "/src/test/resources/configuration/TestCase_report_template.html";
-	public static final String TestSteps_Template = System.getProperty("user.dir")+ "/src/test/resources/configuration/TestSteps_report_template.html";
+	public static final String LogPropDir = System.getProperty("user.dir")+ "/src/main/resources/configuration/log4j.properties";
+	public static final String TestCase_Template = System.getProperty("user.dir")+ "/src/main/resources/configuration/TestCase_report_template.html";
+	public static final String TestSteps_Template = System.getProperty("user.dir")+ "/src/main/resources/configuration/TestSteps_report_template.html";
 
 	//Results directory
 	public static final String Results_Folder = System.getProperty("user.dir")+"/results/";
