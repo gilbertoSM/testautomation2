@@ -1,4 +1,4 @@
-﻿properties([pipelineTriggers([[$class: 'BitBucketTrigger']])])
+properties([pipelineTriggers([[$class: 'BitBucketTrigger']])])
 def deployEnvironments = ['Staging', 'Production'].join('\n')
 
 pipeline {
@@ -32,20 +32,14 @@ pipeline {
         sh 'mvn validate'
       }
     }
-    stage('Compile') {
+    stage('Tests') {
       steps {
         timeout(time: 5, unit: 'MINUTES') {
             sh 'mvn compile'
+            sh 'mvn test'
         }
       }
     }
-    stage('Tests') {
-          steps {
-            timeout(time: 5, unit: 'MINUTES') {
-                sh 'mvn test'
-            }
-          }
-        }
   }
 
   post {
@@ -77,7 +71,7 @@ def publishHtmlReports() {
 }
 
 
-def slackNotify(type, message=null, channels=['backendjenkins']) {
+def slackNotify(type, message=null, channels=['qa']) {
   color = "#8c8c8c"
   if (type == "Success") {
     color = "#36a64f"
@@ -87,7 +81,7 @@ def slackNotify(type, message=null, channels=['backendjenkins']) {
 
   def slackMsg = message;
   if (message == null) {
-    slackMsg = "Automation Test � ${env.GIT_BRANCH} - #${env.BUILD_NUMBER} ${type} (<${env.BUILD_URL}|Open>)";
+    slackMsg = "Automation Test » ${env.GIT_BRANCH} - #${env.BUILD_NUMBER} ${type} (<${env.BUILD_URL}|Open>)";
   }
 
   channels.each {
