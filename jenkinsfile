@@ -23,19 +23,19 @@ pipeline {
   stages {
     stage('Clean') {
       steps {
-        sh 'mvn clean'
+        bat 'mvn clean'
       }
     }
     stage('Validate') {
       steps {
-        sh 'mvn validate'
+        bat 'mvn validate'
       }
     }
     stage('Tests') {
       steps {
         timeout(time: 5, unit: 'MINUTES') {
-            sh 'mvn compile'
-            sh 'mvn test'
+            bat 'mvn compile'
+            bat 'mvn test'
         }
       }
     }
