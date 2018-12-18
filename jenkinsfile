@@ -42,52 +42,5 @@ pipeline {
     }
   }
 
-  post {
-    always {
-      publishHtmlReports()
-    }
-    aborted {
-      slackNotify("Aborted")
-    }
-    success {
-      slackNotify("Success")
-    }
-    failure {
-      slackNotify("Failure")
-    }
-  }
 }
 
-def publishHtmlReports() {
-  echo 'Publish test reports'
-  publishHTML target: [
-    allowMissing: false,
-    alwaysLinkToLastBuild: false,
-    keepAll: true,
-    reportDir: 'results',
-    reportFiles: 'TestCaseReport.html',
-    reportName: 'Results report'
-  ]
-}
-
-
-def slackNotify(type, message=null, channels=['qa']) {
-  color = "#8c8c8c"
-  if (type == "Success") {
-    color = "#36a64f"
-  } else if (type == "Failure") {
-    color = "#d00000"
-  }
-
-  def slackMsg = message;
-  if (message == null) {
-    slackMsg = "Automation Test » ${env.GIT_BRANCH} - #${env.BUILD_NUMBER} ${type} (<${env.BUILD_URL}|Open>)";
-  }
-
-  channels.each {
-    slackSend(
-      color: "${color}", botUser: true, channel: "${it}",
-      message: slackMsg
-    )
-  }
-}
